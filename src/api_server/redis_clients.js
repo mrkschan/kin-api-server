@@ -6,12 +6,15 @@
 
 const Redis = require("ioredis");
 
+const { REDIS_HOST, REDIS_PORT, REDIS_DB } = require("./config");
+
 /**
  * Redis setup 1/2
  */
 const _redis_options = {
-    port: 6390,
-    db: 1,
+    host: REDIS_HOST,
+    port: REDIS_PORT,
+    db: REDIS_DB,
 
     // Used to prevent it from connecting during tests
     lazyConnect: true

@@ -32,6 +32,38 @@ const API_PORT = {
 }[env];
 
 /*
+ * host / ip that Redis is listening on
+ *
+ * e.g.:
+ *  dev: 127.0.0.1
+ *  prod: <ip used to reach the Redis server>
+ */
+const REDIS_HOST = {
+    dev: "",
+    prod: ""
+}[env];
+
+/*
+ * port that Redis is listening on.
+ *
+ * e.g: 6390
+ */
+const REDIS_PORT = {
+    dev: 0,
+    prod: 0
+}[env];
+
+/*
+ * The Redis DB to use.
+ *
+ * e.g: 1
+ */
+const REDIS_DB = {
+    dev: 0,
+    prod: 0
+}[env];
+
+/*
  * Externally facing hostnames of your setup: API endpoint, static assets endpoint
  *
  * e.g: kin.today / static.kin.today
@@ -85,6 +117,10 @@ module.exports = {
     API_PORT,
     API_HOSTNAME,
     STATIC_HOSTNAME,
+
+    REDIS_HOST,
+    REDIS_PORT,
+    REDIS_DB,
 
     PROVIDER_NB_MONTHS_PAST,
     PROVIDER_NB_MONTHS_FUTURE,
